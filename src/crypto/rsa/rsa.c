@@ -471,7 +471,7 @@ finish:
   return ret;
 }
 
-int RSA_verify(int hash_nid, const uint8_t *msg, size_t msg_len,
+ __attribute__((weak))  int RSA_verify(int hash_nid, const uint8_t *msg, size_t msg_len,
                const uint8_t *sig, size_t sig_len, RSA *rsa) {
   const size_t rsa_size = RSA_size(rsa);
   uint8_t *buf = NULL;
